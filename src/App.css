@@ -1,3 +1,11 @@
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+
+}
+
 .App {
   text-align: center;
 }
@@ -29,4 +37,9 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+#map {
+  height: 100vh;  /*using percentage causes generated map position = auto (relative)*/
+  width: 100%;
 }
