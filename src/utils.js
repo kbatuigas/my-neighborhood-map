@@ -38,5 +38,5 @@ export function loadPlaces() {
     
     let fsAPI = `https://api.foursquare.com/v2/venues/search?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}&limit=50&query=${query}&near=${area}&v=20190122`;
 
-    return fetch(fsAPI).then(resp => resp.json);
+    return fetch(fsAPI).then(resp => resp.json());
 }
