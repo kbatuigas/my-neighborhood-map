@@ -19,6 +19,7 @@ class App extends Component {
        zoom: 13,
        center: { lat: 45.5122, lng: -122.6587 }
      });
+     this.markers = [];
 
    });
  }
