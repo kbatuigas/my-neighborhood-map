@@ -33,10 +33,10 @@ export function loadMap() {
 export function loadPlaces() {
     const CLIENT_ID = '0OM1NOQ1YQMD3HBYBJT3MPFOZSB0XJYAWR3QEVI4NZF4SZOJ',
           CLIENT_SECRET = '1Y0XUO1GBRCCAZMOKAWNDSSTWRDV0FDAWYMSH3MAD5FNNGLM';  
-    let area = 'Portland, OR',
-        query = 'bars';
+    let ll = '45.5122,-122.6587',
+        query = 'bar';
     
-    let fsAPI = `https://api.foursquare.com/v2/venues/search?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}&limit=50&query=${query}&near=${area}&v=20190122`;
+    let fsAPI = `https://api.foursquare.com/v2/venues/search?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}&limit=50&query=${query}&ll=${ll}&radius=50000&intent=browse&v=20190122`;
 
     return fetch(fsAPI).then(resp => resp.json());
 }
