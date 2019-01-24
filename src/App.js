@@ -25,6 +25,7 @@ class App extends Component {
        center: { lat: 45.5122, lng: -122.6587 }
      });
      
+     //Add marker on map for each place
      this.markers = [];
      places.forEach(venue => {
        let marker = new google.maps.Marker({
@@ -35,7 +36,20 @@ class App extends Component {
          animation: google.maps.Animation.DROP
 
        });
+
+      marker.addListener('click', () => {
+        if (marker.getAnimation() !== null) {
+          marker.setAnimation(null);
+        } else {
+          marker.setAnimation(google.maps.Animation.BOUNCE);
+        }
+        setTimeout(() => {
+          marker.setAnimation(null)
+        }, 1000);
+      }) 
      })
+
+
 
 
    });
