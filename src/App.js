@@ -4,6 +4,8 @@ import './App.css';
 
 import { loadMap, loadPlaces } from './utils';
 
+import FilterWindow from './components/FilterWindow';
+
 class App extends Component {
  componentDidMount() {
    //preps data even before map is displayed
@@ -58,7 +60,17 @@ class App extends Component {
 
   render() {
     return (
-      <div id="map">
+      <div className="App" >
+        <header className="App-header">
+          <h1 className="App-title">Bars in Portland, OR</h1>
+        </header>
+        <div className="container">
+          <FilterWindow />
+          <div id="map">
+        </div>
+      </div>
+        
+        
       </div>
     );
   }
