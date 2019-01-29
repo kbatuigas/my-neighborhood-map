@@ -1,11 +1,10 @@
-import React from 'react'
+import React, { Component } from 'react'
 
 //import { loadPlaces } from '../utils.js'
 
-class FilterWindow extends React.Component {
+class FilterWindow extends Component {
     constructor(props) {
-        super(props);    
-        
+        super(props);
     }
 
     componentDidMount() {
@@ -15,13 +14,20 @@ class FilterWindow extends React.Component {
     render() {
         return (
             <div id="filter-window">
-                <input placeholder="Filter places..." onChange={(e) => {
-                    
-                }} />
+                <div className="search">
+                    {/*use form/aria role or label instead of placeholder */}
+                    <input type="search" placeholder="Filter bars..." value={this.props.query} onChange={(e) => {
+                        this.props.filterPlaces(e.target.value)
+                    } }/>
+                </div>
                     <section>
-                        <h2>Places</h2>
-                        <ol className = 'places-list'>
-                        </ol>
+                        <h2>Bars</h2>
+                        <div className="places">
+                            <ol className ="places-list">
+
+                                <li className="place-info" >Test</li>
+                            </ol>
+                        </div>
                     </section>
 
                 
@@ -30,7 +36,5 @@ class FilterWindow extends React.Component {
     }
 
 }
-
-
 
 export default FilterWindow;
