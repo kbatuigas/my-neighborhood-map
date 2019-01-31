@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-/*import logo from './logo.svg';*/
 import './App.css';
 
 import { loadMap, loadPlaces } from './utils';
@@ -12,6 +11,9 @@ class App extends Component {
     this.state = {
       query: ''
     }
+    // Bind the function properly to give it the correct context!
+    // Otherwise places remains undefined in the callback!
+    this.filterPlaces = this.filterPlaces.bind(this);
   }
 
   componentDidMount() {
@@ -34,14 +36,17 @@ class App extends Component {
         center: { lat: 45.5122, lng: -122.6587 }
       });
      
-     //Add marker on map for each place
+      this.setState({ placeList: this.places }); // List of places includes all, by default
+      //console.log(this.state);
+
+      //Add marker on map for each place
       this.markers = [];
-      this.places.forEach(venue => {
+      this.places.forEach(place => {
         let marker = new google.maps.Marker({
-          position: { lat: venue.location.lat, lng: venue.location.lng },
+          position: { lat: place.location.lat, lng: place.location.lng },
           map: this.map,
-          id: venue.id,
-          name: venue.name,
+          id: place.id,
+          name: place.name,
           animation: google.maps.Animation.DROP
 
         });
@@ -59,7 +64,6 @@ class App extends Component {
           }, 1000);
         }); 
       });
-      this.setState({ placeList: this.places }); // List of places includes all, by default
 
       this.infowindow = new google.maps.InfoWindow(); 
 
@@ -71,9 +75,12 @@ class App extends Component {
   // as the sidebar. This function shows/hides marker based on
   // whether the place name matches the search term
   filterPlaces(query) {
+    //console.log(query);
+    //console.log(this.places);
     let p = this.places.filter(place => place.name.toLowerCase().includes(
       query.toLowerCase()
     ));
+    console.log(p);
     this.markers.forEach(marker => {
       if (marker.name.toLowerCase().includes(
         query.toLowerCase()
@@ -84,7 +91,8 @@ class App extends Component {
       }
     })
 
-    this.setState({placeList: p }); // List of places filtered
+    this.setState({placeList: p, query }); // List of places filtered 
+    //console.log(this.state);
   }
 
 
@@ -94,10 +102,10 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Bars in Portland, OR</h1>
         </header>
-        <div className="container">
+        <div className="container" >
           <FilterWindow 
-            filterPlaces={this.filterPlaces}
-            placeList={this.placeList}
+            filterplaces={this.filterPlaces}
+            placelist={this.state.placeList}
           />
           <div id="map">
         </div>

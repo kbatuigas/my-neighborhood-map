@@ -8,7 +8,7 @@ class FilterWindow extends Component {
     }
 
     componentDidMount() {
-
+        console.log(this.props);
     }
 
     render() {
@@ -17,7 +17,8 @@ class FilterWindow extends Component {
                 <div className="search">
                     {/*use form/aria role or label instead of placeholder */}
                     <input type="search" placeholder="Filter bars..." value={this.props.query} onChange={(e) => {
-                        this.props.filterPlaces(e.target.value)
+                        //console.log(this.props);
+                        this.props.filterplaces(e.target.value)
                     } }/>
                 </div>
                     <section>
