@@ -22,7 +22,6 @@ class FilterWindow extends Component {
                     } }/>
                 </div>
                     <section>
-                        <h2>Bars</h2>
                         <div className="places">
                             <ol className ="places-list">
                                 {/*Important! Props need to have been passed down - not including this.props.placelist

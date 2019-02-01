@@ -74,8 +74,40 @@ h2 {
 
 #filter-window {
   width: 100%;
+  padding: 1em 0;
+  overflow-y: scroll;
 }
 
+#filter-window .search {
+  padding: 0 0 1em;
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#filter-window section {
+  max-height: 30vh;
+}
+
+.places {
+  margin-left: 0.5em;
+
+}
+
+.places-list {
+  padding-inline-start: 1em;
+  text-align: left;
+  padding: 0 0.2em;
+}
+
+li.place-item {
+  margin: 0.5em 0;
+  padding: 0.2em;
+  list-style-position: inside;
+  border: 1px groove;
+  box-shadow: 2px 1px #888888;
+  border-radius: 5px;
+}
 
 
 @media only screen and (min-width: 768px) {
@@ -102,6 +134,14 @@ h2 {
 
   #map {
     width: 70%;
+  }
+
+  #filter-window .section {
+    max-height: 100vh;
+  }
+
+  li.place-item {
+    padding: 1em;
   }
 } 
 
