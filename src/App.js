@@ -68,6 +68,8 @@ class App extends Component {
       this.infowindow = new google.maps.InfoWindow(); 
 
     });
+
+
   }
 
   // FilterWindow component passes data (query) up to App, which
@@ -80,7 +82,7 @@ class App extends Component {
     let p = this.places.filter(place => place.name.toLowerCase().includes(
       query.toLowerCase()
     ));
-    console.log(p);
+    //console.log(p);
     this.markers.forEach(marker => {
       if (marker.name.toLowerCase().includes(
         query.toLowerCase()
@@ -97,6 +99,7 @@ class App extends Component {
 
 
   render() {
+    //console.log(this.places);
     return (
       <div className="App" >
         <header className="App-header">

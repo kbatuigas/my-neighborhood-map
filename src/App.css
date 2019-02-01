@@ -109,6 +109,20 @@ li.place-item {
   border-radius: 5px;
 }
 
+p.place-name, p.place-address {
+  margin: 0;
+}
+
+p.place-name {
+  display: inline-block;
+}
+
+p.place-address {
+  position: absolute;
+  left: -10000px;
+  font-size: 0.8rem;
+}
+
 
 @media only screen and (min-width: 768px) {
   .App-header {
@@ -142,6 +156,11 @@ li.place-item {
 
   li.place-item {
     padding: 1em;
+  }
+
+  p.place-address {
+    position: unset;
+    left: unset;
   }
 } 
 
