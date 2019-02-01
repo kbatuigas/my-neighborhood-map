@@ -25,9 +25,14 @@ class FilterWindow extends Component {
                         <h2>Bars</h2>
                         <div className="places">
                             <ol className ="places-list">
-
-                                <li className="place-info" >Test</li>
+                                {/*Important! Props need to have been passed down - not including this.props.placelist
+                                    will cause entire app to not render at all */ }
+                                { this.props.placelist && this.props.placelist.length > 0 && this.props.placelist.map((place, index) => (
+                                    <li key={index} className="place-item" >{place.name}</li>
+                                ))
+                                }
                             </ol>
+                            
                         </div>
                     </section>
 
