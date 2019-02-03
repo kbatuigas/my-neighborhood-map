@@ -110,12 +110,10 @@ class App extends Component {
             filterplaces={this.filterPlaces}
             placelist={this.state.placeList}
           />
-          <div id="map">
+          <main id="map" />
         </div>
       </div>
         
-        
-      </div>
     );
   }
 }
