@@ -41,6 +41,7 @@ class App extends Component {
 
       //Add marker on map for each place
       this.markers = [];
+
       this.places.forEach(place => {
         let marker = new google.maps.Marker({
           position: { lat: place.location.lat, lng: place.location.lng },
@@ -50,9 +51,21 @@ class App extends Component {
           animation: google.maps.Animation.DROP
 
         });
+
+
         this.markers.push(marker);
         
         
+        let placeInfo = `${marker.name}`;
+        
+        
+        google.maps.event.addListener(marker, 'click', () => {
+          this.infowindow.setContent(placeInfo);
+          this.map.setCenter(marker.position);
+          this.infowindow.open(this.map, marker);
+
+        })
+
         marker.addListener('click', () => {
           if (marker.getAnimation() !== null) {
             marker.setAnimation(null);
@@ -110,7 +123,7 @@ class App extends Component {
             filterplaces={this.filterPlaces}
             placelist={this.state.placeList}
           />
-          <main id="map" />
+          <main id="map" role="application" />
         </div>
       </div>
         
