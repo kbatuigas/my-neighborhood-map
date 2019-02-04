@@ -28,7 +28,6 @@ class App extends Component {
       mapsPromise,
       placesPromise
     ]).then(values => {
-      //console.log(values);
       let google = values[0];
       this.places = values[1].response.venues; //this allows data to be accessed as component property
      
@@ -39,7 +38,6 @@ class App extends Component {
       });
      
       this.setState({ placeList: this.places }); // List of places includes all, by default
-      //console.log(this.state);
 
       //Add marker on map for each place
       this.markers = [];
@@ -94,12 +92,9 @@ class App extends Component {
   // as the sidebar. This function shows/hides marker based on
   // whether the place name matches the search term
   filterPlaces(query) {
-    //console.log(query);
-    //console.log(this.places);
     let p = this.places.filter(place => place.name.toLowerCase().includes(
       query.toLowerCase()
     ));
-    //console.log(p);
     this.markers.forEach(marker => {
       if (marker.name.toLowerCase().includes(
         query.toLowerCase()
@@ -111,7 +106,6 @@ class App extends Component {
     })
 
     this.setState({placeList: p, query }); // List of places filtered 
-    //console.log(this.state);
   }
 
   placeListClick(place) {
@@ -122,7 +116,6 @@ class App extends Component {
           '<div className="infowindow-address"><p>' + place.location.address +'<br />' +
             place.location.city + ', ' + place.location.state + ' ' + place.location.postalCode + '</div>'
     );
-    //console.log(place);
     this.map.setCenter(clickedPlace.position);
     this.infowindow.open(this.map, clickedPlace);
 
@@ -130,7 +123,6 @@ class App extends Component {
 
 
   render() {
-    //console.log(this.places);
     return (
       <div className="App" >
         <header className="App-header">

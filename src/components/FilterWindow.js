@@ -7,17 +7,17 @@ class FilterWindow extends Component {
         super(props);
     }
 
-    componentDidMount() {
+    /*componentDidMount() {
         //console.log(this.props);
     }
+    */
 
     render() {
         return (
             <div id="filter-window">
                 <div className="search">
-                    {/*use form/aria role or label instead of placeholder */}
-                    <input type="search" placeholder="Filter bars..." value={this.props.query} onChange={(e) => {
-                        //console.log(this.props);
+                    <label for="place-search">Search Bars:</label>
+                    <input type="search" id="place-search" value={this.props.query} onChange={(e) => {
                         this.props.filterplaces(e.target.value)
                     } }/>
                 </div>
@@ -28,7 +28,6 @@ class FilterWindow extends Component {
                                     will cause entire app to not render at all */ }
                                 { this.props.placelist && this.props.placelist.length > 0 && this.props.placelist.map((place, index) => (
                                     <li key={index} className="place-item" onClick={() => {
-                                        //console.log(this);
                                         this.props.placelistclick(place);
                                     }} >
                                         <p className="place-name">{place.name}</p>
