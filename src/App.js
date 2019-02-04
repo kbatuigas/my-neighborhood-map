@@ -119,6 +119,15 @@ class App extends Component {
     this.map.setCenter(clickedPlace.position);
     this.infowindow.open(this.map, clickedPlace);
 
+    if (clickedPlace.getAnimation() !== null) {
+      clickedPlace.setAnimation(null);
+    } else {
+      clickedPlace.setAnimation(this.google.maps.Animation.BOUNCE);
+    }
+    setTimeout(() => {
+      clickedPlace.setAnimation(null)
+    }, 1000);
+
   }
 
 
