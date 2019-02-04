@@ -57,8 +57,8 @@ class App extends Component {
         
         
         let placeInfo = 
-          '<div className="infowindow-name">' + place.name + '</div>' + 
-          '<div className="infowindow-address"><p>' + place.location.address +'<br />' +
+          '<div class="infowindow-name">' + place.name + '</div>' + 
+          '<div class="infowindow-address"><p>' + place.location.address +'<br />' +
             place.location.city + ', ' + place.location.state + ' ' + place.location.postalCode + '</div>';
         
         google.maps.event.addListener(marker, 'click', () => {
@@ -112,8 +112,8 @@ class App extends Component {
     let clickedPlace = this.markers.filter(m => m.id === place.id)[0];
     
     this.infowindow.setContent(
-      '<div className="infowindow-name">' + place.name + '</div>' + 
-          '<div className="infowindow-address"><p>' + place.location.address +'<br />' +
+      '<div class="infowindow-name">' + place.name + '</div>' + 
+          '<div class="infowindow-address"><p>' + place.location.address +'<br />' +
             place.location.city + ', ' + place.location.state + ' ' + place.location.postalCode + '</div>'
     );
     this.map.setCenter(clickedPlace.position);

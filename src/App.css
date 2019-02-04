@@ -111,17 +111,20 @@ li.place-item {
 
 li.place-item:hover {
   background-color: #f4eded;
-  cursor: pointer;
 }
 
 li.place-item button {
   padding: 0;
   background-color: unset;
   border: unset;
-  display: inline-block;
-  max-width: 85%;
+  display: inline-grid;
+  text-align: initial;
+  max-width: 90%;
   font: inherit;
   cursor: pointer;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 p.place-name, p.place-address {
@@ -130,6 +133,11 @@ p.place-name, p.place-address {
 
 p.place-name {
   display: inline-block;
+  font-weight: bold;
+}
+
+div.infowindow-name {
+  font-weight: bold;
 }
 
 p.place-address {
@@ -158,11 +166,11 @@ p.place-address {
  
 
   #filter-window {
-    width: 30%;
+    width: 25%;
   }
 
   #map {
-    width: 70%;
+    width: 75%;
   }
 
   #filter-window .section {
@@ -171,6 +179,7 @@ p.place-address {
 
   li.place-item {
     padding: 1em;
+    text-align: center;
   }
 
   p.place-address {
