@@ -27,7 +27,10 @@ class FilterWindow extends Component {
                                 {/*Important! Props need to have been passed down - not including this.props.placelist
                                     will cause entire app to not render at all */ }
                                 { this.props.placelist && this.props.placelist.length > 0 && this.props.placelist.map((place, index) => (
-                                    <li key={index} className="place-item" >
+                                    <li key={index} className="place-item" onClick={() => {
+                                        //console.log(this);
+                                        this.props.placelistclick(place);
+                                    }} >
                                         <p className="place-name">{place.name}</p>
                                         <p className="place-address">{place.location.address}, {place.location.city}, {place.location.state} {place.location.postalCode}</p> 
                                     </li>

@@ -109,6 +109,11 @@ li.place-item {
   border-radius: 5px;
 }
 
+li.place-item:hover {
+  background-color: #f4eded;
+  cursor: pointer;
+}
+
 p.place-name, p.place-address {
   margin: 0;
 }

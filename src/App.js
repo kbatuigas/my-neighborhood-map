@@ -14,6 +14,8 @@ class App extends Component {
     // Bind the function properly to give it the correct context!
     // Otherwise places remains undefined in the callback!
     this.filterPlaces = this.filterPlaces.bind(this);
+
+    this.placeListClick = this.placeListClick.bind(this);
   }
 
   componentDidMount() {
@@ -57,10 +59,9 @@ class App extends Component {
         
         
         let placeInfo = 
-          '<div className="infowindow-name">' + marker.name + '</div>' + 
+          '<div className="infowindow-name">' + place.name + '</div>' + 
           '<div className="infowindow-address"><p>' + place.location.address +'<br />' +
             place.location.city + ', ' + place.location.state + ' ' + place.location.postalCode + '</div>';
-        
         
         google.maps.event.addListener(marker, 'click', () => {
           this.infowindow.setContent(placeInfo);
@@ -113,6 +114,20 @@ class App extends Component {
     //console.log(this.state);
   }
 
+  placeListClick(place) {
+    let clickedPlace = this.markers.filter(m => m.id === place.id)[0];
+    
+    this.infowindow.setContent(
+      '<div className="infowindow-name">' + place.name + '</div>' + 
+          '<div className="infowindow-address"><p>' + place.location.address +'<br />' +
+            place.location.city + ', ' + place.location.state + ' ' + place.location.postalCode + '</div>'
+    );
+    //console.log(place);
+    this.map.setCenter(clickedPlace.position);
+    this.infowindow.open(this.map, clickedPlace);
+
+  }
+
 
   render() {
     //console.log(this.places);
@@ -125,6 +140,7 @@ class App extends Component {
           <FilterWindow 
             filterplaces={this.filterPlaces}
             placelist={this.state.placeList}
+            placelistclick={this.placeListClick}
           />
           <main id="map" role="application" />
         </div>
