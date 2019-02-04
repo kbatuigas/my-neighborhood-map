@@ -114,6 +114,16 @@ li.place-item:hover {
   cursor: pointer;
 }
 
+li.place-item button {
+  padding: 0;
+  background-color: unset;
+  border: unset;
+  display: inline-block;
+  max-width: 85%;
+  font: inherit;
+  cursor: pointer;
+}
+
 p.place-name, p.place-address {
   margin: 0;
 }
