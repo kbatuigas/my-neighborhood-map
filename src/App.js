@@ -56,7 +56,10 @@ class App extends Component {
         this.markers.push(marker);
         
         
-        let placeInfo = `${marker.name}`;
+        let placeInfo = 
+          '<div className="infowindow-name">' + marker.name + '</div>' + 
+          '<div className="infowindow-address"><p>' + place.location.address +'<br />' +
+            place.location.city + ', ' + place.location.state + ' ' + place.location.postalCode + '</div>';
         
         
         google.maps.event.addListener(marker, 'click', () => {
