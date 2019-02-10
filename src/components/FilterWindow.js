@@ -16,7 +16,7 @@ class FilterWindow extends Component {
         return (
             <div id="filter-window">
                 <div className="search">
-                    <label for="place-search">Search Bars: </label>
+                    <label htmlFor="place-search">Search Bars: </label>
                     <input type="search" id="place-search" value={this.props.query} onChange={(e) => {
                         this.props.filterplaces(e.target.value)
                     } }/>
