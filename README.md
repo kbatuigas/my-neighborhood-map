@@ -1,4 +1,15 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Grow with Google FEND Project: Neighborhood Map
+
+A simple app that displays a list of bars in Portland, Oregon on a Google Map. Search functionality is included to filter the list (search against place name).
+
+To use the app, go to [https://kbatuigas.github.io/my-neighborhood-map](https://kbatuigas.github.io/my-neighborhood-map).
+
+# Development Instructions
+
+1. Download the files locally from this repository.
+2. Using the terminal, navigate to the directory where the repository has been saved.
+3. Install project dependencies with `npm install`
+4. Start the development server with `npm start`
 
 ## Available Scripts
 
@@ -37,32 +48,12 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+# About the Project
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started). To learn React, check out the [React documentation](https://reactjs.org/).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+This project uses the [Google Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/tutorial) and [Foursquare Places API](https://developer.foursquare.com/places-api).
 
-### Code Splitting
+# Credits
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+* Ryan Waite's [Google Maps with React JS webinar](https://youtu.be/5J6fs_BlVC0)
