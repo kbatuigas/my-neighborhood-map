@@ -82,9 +82,17 @@ class App extends Component {
 
       this.infowindow = new google.maps.InfoWindow(); 
 
-    });
+    })
+    .catch(error => {
+      console.log(error);
+      alert('Error loading page. Pleae try again later.');
+});
 
 
+  }
+
+  componentDidCatch(error, info) {
+    console.log(error);
   }
 
   // FilterWindow component passes data (query) up to App, which
@@ -133,20 +141,19 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App" >
-        <header className="App-header">
-          <h1 className="App-title">Bars in Portland, OR</h1>
-        </header>
-        <div className="container" >
-          <FilterWindow 
-            filterplaces={this.filterPlaces}
-            placelist={this.state.placeList}
-            placelistclick={this.placeListClick}
-          />
-          <main id="map" role="application" />
+        <div className="App" >
+          <header className="App-header">
+            <h1 className="App-title">Bars in Portland, OR</h1>
+          </header>
+          <div className="container" >
+            <FilterWindow 
+              filterplaces={this.filterPlaces}
+              placelist={this.state.placeList}
+              placelistclick={this.placeListClick}
+            />
+            <main id="map" role="application" />
+          </div>
         </div>
-      </div>
-        
     );
   }
 }

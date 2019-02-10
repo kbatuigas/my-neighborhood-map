@@ -38,5 +38,11 @@ export function loadPlaces() {
     
     let fsAPI = `https://api.foursquare.com/v2/venues/search?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}&limit=50&query=${query}&ll=${ll}&radius=50000&intent=browse&v=20190122`;
 
-    return fetch(fsAPI).then(resp => resp.json());
+    return fetch(fsAPI).then(resp => {
+        if (resp.ok) {
+            return resp.json();
+        } else {
+            return Promise.reject("Foursquare data unable to load");
+        }
+    }).catch(error => console.log("Error: ", error));
 }
